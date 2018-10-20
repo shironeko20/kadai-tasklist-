@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Message;    // 追加
+use App\Tasks;    // 追加
 
 class TasksController extends Controller
 {
@@ -29,7 +29,7 @@ class TasksController extends Controller
      */
     public function create()
     {
-        $tasks = new Task;
+        $tasks = new Tasks;
 
         return view('tasks.create', [
             'tasks' => $tasks,
@@ -44,7 +44,7 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        $tasks = new Task;
+        $tasks = new Tasks;
         $tasks->content = $request->content;
         $tasks->save();
 
