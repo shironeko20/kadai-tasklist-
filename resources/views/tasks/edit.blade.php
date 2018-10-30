@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
- 
-    <h1>id = {{ $tasks->id }} のタスク詳細ページ</h1>
 
-    <p>{{ $tasks->content }}</p>
+    <h1>id: {{ $tasks->id }} のタスク編集ページ</h1>
 
-    {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $tasks->id]) !!}
+    {!! Form::model($tasks, ['route' => ['tasks.update', $tasks->id], 'method' => 'put']) !!}
 
+        {!! Form::label('content', 'タスク:') !!}
+        {!! Form::text('content') !!}
+
+        {!! Form::submit('更新') !!}
+
+    {!! Form::close() !!}
 
 @endsection
