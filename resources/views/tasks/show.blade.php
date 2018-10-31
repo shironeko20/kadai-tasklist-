@@ -4,7 +4,7 @@
 
 <h1>id = {{ $tasks->id }} のタスク詳細ページ</h1>
 
-<p>タイトル: {{ $tasks->title }}</p>
+<p>ステータス: {{ $tasks->status }}</p>
 <p>タスク: {{ $tasks->content }}</p>
 
     <p>{{ $tasks->content }}</p>
