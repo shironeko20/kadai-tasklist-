@@ -50,7 +50,7 @@ class TasksController extends Controller
         ]);
         
         $tasks = new Tasks;
-        $message->title = $request->title; 
+        $tasks->title = $request->title; 
         $tasks->content = $request->content;
         $tasks->save();
 
@@ -102,7 +102,7 @@ class TasksController extends Controller
         ]);
         
         $tasks = Tasks::find($id);
-        $message->title = $request->title; 
+        $tasks->title = $request->title; 
         $tasks->content = $request->content;
         $tasks->save();
 
